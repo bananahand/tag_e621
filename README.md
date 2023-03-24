@@ -27,4 +27,4 @@ Notes:
 2) This script keeps the same behavior as if you were manually adding tags through windows file properties.
 3) Tags are added to the following tag fields: Keywords, Subject, LastKeywordIPTC and LastKeywordXMP.
 4) Most images have tags that go beyond the IPTC limits so tags will show as truncated in windows file properties.
-5) Even though tags show as truncated they all still work. You can view full tags through "exiftool <file>" if needed.
+5) Even though tags show as truncated they all still work. You can view full tags through "exiftool \<file\>" if needed.
