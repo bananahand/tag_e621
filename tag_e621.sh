@@ -76,11 +76,11 @@ for (( i = 0; i < ${#file_array[@]}; i=i+1 ))
 do
   md5="$(echo ${file_array[$i]} | awk -F'/' '{print $NF}' | awk -F'.' '{print $1}')"
   ext="$(echo ${file_array[$i]} | awk -F'/' '{print $NF}' | awk -F'.' '{print $2}')"
-  tags="$(grep -m1 "${md5}" test.json | jq -r ".tags[]" | sed -e "s/ /,/g")"
+  tags="$(grep -m1 "${md5}" ${tags_json} | jq -r ".tags[]" | sed -e "s/ /,/g")"
   if [[ ! "${ext}" == @(swf|webm) ]]
   then
     echo "Tagging ${file_array[$i]}"
-    time exiftool -m -q -overwrite_original -Keywords=${tags} -Subject=${tags} -LastKeywordIPTC=${tags} -LastKeywordXMP=${tags} ${file_array[$i]}
+    exiftool -m -q -overwrite_original -Keywords=${tags} -Subject=${tags} -LastKeywordIPTC=${tags} -LastKeywordXMP=${tags} ${file_array[$i]}
   else
     echo "Unsupported file detected: ${file_array[$i]} Skipping..."
   fi
