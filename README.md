@@ -17,4 +17,8 @@ How to use:
 4) Make the script executable: `chmod +x tag_e621.sh`
 5) Run the script: `./tag_e621.sh`
 
+On the first run it will convert the posts csv to json, then trim that json to create objects as {md5, [tags]} for easy lookup with grep. It also cleans some post descriptions containing bad characters that break the json processor. These first run steps take about 5 minutes to complete before the tagging starts. I've added logic to detect if these temporary files have already been generated so you can skip to speed up the time it takes for tagging to start.
+
+From my tests on a machine with a spinning HDD the script tags 1 image every ~300ms which slightly over 3 per second. If your images are on an NVMe SSD I would expect tagging to be even faster.
+
 Note: exiftool doesn't support writing to swf or webm so these files will be skipped.
