@@ -24,7 +24,7 @@ From my tests on a machine with a spinning HDD the script tags 1 image every ~30
 Notes: 
 
 1) exiftool doesn't support writing to swf or webm so these files will be skipped.
-2) This script keeps the same behavior as if you were manually adding tags through windows file properties.
+2) This script keeps the same behavior as if you were manually adding tags through Windows file properties.
 3) Tags are added to the following tag fields: Keywords, Subject, LastKeywordIPTC and LastKeywordXMP.
-4) Most images have tags that go beyond the IPTC limits so tags will show as truncated in windows file properties.
+4) Most images have tags that go beyond the IPTC limits so tags will show as truncated in Windows file properties.
 5) Even though tags show as truncated they all still work. You can view full tags through "exiftool \<file\>" if needed.
