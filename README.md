@@ -16,3 +16,5 @@ How to use:
 3) Update "posts_export" and "file_path" variables to the db dump and your e621 images.
 4) Make the script executable: `chmod +x tag_e621.sh`
 5) Run the script: `./tag_e621.sh`
+
+Note: exiftool doesn't support writing to swf or webm so these files will be skipped.
