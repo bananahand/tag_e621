@@ -87,8 +87,13 @@ do
 done
 
 # Delete temporary files.
-echo "Cleaning up..."
-rm -f ${posts_json}
-rm -f ${tags_json}
-
-echo "Done!"
+echo "Tagging complete! Delete temp files? (y/n)"
+read delete_temp
+if [[ "$delete_temp" = "y" ]]
+then
+  echo "Cleaning up..."
+  rm -f ${posts_json}
+  rm -f ${tags_json}
+else
+  echo "Done!"
+fi
