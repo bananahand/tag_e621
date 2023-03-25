@@ -44,7 +44,7 @@ then
 fi
 
 # Trim posts_json stripping everything but md5 + tags for fast match with grep.
-if [[ ! -f ${posts_json} ]]
+if [[ ! -f ${tags_json} ]]
 then
   echo "Trimming $(echo ${posts_export} | awk -F'.' '{print $1}').json..."
   jq -c ".[] | {"md5":.md5, "tags":[.tag_string]}" <${posts_json} >${tags_json}
