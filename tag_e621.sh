@@ -12,7 +12,7 @@ file_path="files/e621_popular/2007"
 # Path to temporary file of trimmed json. Managed by script.
 tags_json="/tmp/tags.json"
 # Path to temporary file of posts csv converted to json. Managed by script.
-posts_json="$(echo ${posts_export} | awk -F'.' '{print $1}').json"
+posts_json="/tmp/$(echo ${posts_export} | awk -F'.' '{print $1}').json"
 
 #### DONT CHANGE BELOW THIS LINE!
 
