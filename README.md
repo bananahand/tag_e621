@@ -1,4 +1,25 @@
-# tag_e621
+# tag_e621.pl (v2 using PERL) (FAST)
+A small perl script to embed tags from e621.net into image EXIF metadata.
+
+Prerequisites:
+1) Text::CSV_XS
+2) Path::Class
+3) File::Basename
+4) Image::ExifTool
+
+How to use:
+
+1) Download images from e621.net to some directory, for example /home/uwubanana/e621_files/
+2) Download a posts db dump from https://e621.net/db_export/
+3) Update "posts_csv" and "file_path" variables to the db dump and your e621 images.
+4) Make the script executable: `chmod +x tag_e621.pl`
+5) Run the script: `./tag_e621.pl`
+
+Note:
+1) This PERL script is much faster than the old BASH version, on an NVMe drive I was tagging over 150 images per second.
+2) Parsing the CSV file takes a couple minutes, don't worry if it hangs for a while.
+
+# tag_e621.sh (v1 using BASH) (SLOW)
 A small bash script to embed tags from e621.net into image EXIF metadata.
 
 Prerequisites:
