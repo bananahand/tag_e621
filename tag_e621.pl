@@ -1,12 +1,12 @@
 #!/usr/bin/perl
 
-# Add tags from e621.net to local image EXIF metadata. 
+# Add tags from e621.net to local image EXIF metadata.
 #
 # $post_csv = posts db dump from https://e621.net/db_export/
 # $file_path = path containing images downloaded from e621.net
 #
 # Authors
-# uwubanana@e621.net 
+# uwubanana@e621.net
 # kora viridian@e621.net
 #
 # 2023-03-26
@@ -51,6 +51,7 @@ for my $file (@files) {
   (my $file_md5 = $base_file_name) =~ s/\.[^.]+$//;
   (my $formatted_tags = $tags{$file_md5}) =~ s/\ /,/g;
   my $exifTool = Image::ExifTool->new;
+  $exifTool->Options(IgnoreMinorErrors => '1');
   $exifTool->SetNewValue(Keywords => "$formatted_tags");
   $exifTool->SetNewValue(Subject => "$formatted_tags");
   $exifTool->SetNewValue(LastKeywordIPTC => "$formatted_tags");
