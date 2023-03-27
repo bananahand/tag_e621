@@ -33,7 +33,7 @@ while (my $row = $csv->getline ($fh))
   {
   $tags{@$row[3]} = @$row[8];
   }
-close $fh or die "$posts_txt: $!";
+close $fh or die "$posts_csv: $!";
 
 print "Searching: " . $file_path . "...\n";
 my @files;
